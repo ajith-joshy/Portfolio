@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container-fluid justify-content-center">
+    <div class="container-fluid">
+<h4 class="display-6 mt-3">TweetPulse(2024-25)</h4>
+<p style="text-align:justify;">Designed and implemented a real-time sentiment analysis system for X(Twitter), focusing on specific hashtags.
+    The system includes key features such as an alert mechanism for detecting sudden sentiment shifts,
+    trend detection to analyze emerging topics, and an interactive dashboard to visualize sentiment trends and data
+    insights. This solution enables effective monitoring of public opinion, offering actionable intelligence for
+    decision-making and engagement strategies.<br><br>
+    I selected Apple as the brand for monitoring, where tweets containing the #apple keyword were collected and analyzed for sentiment.
+    The tweet collection process began in October 2024 and continued until February 2025, during which approximately 30,000 tweets were
+    gathered using Twikit (a Python library). From these, about 26,000 tweets were used for model selection on multiple machine learning
+    models.<br><br>
+    Among all the algorithms tested, XGBoost provided the highest accuracy based on various evaluation metrics.
+    The best-performing model, XGBoost, was then deployed for continuous sentiment prediction on newly collected tweets.
+    Finally, the results were visualized through an interactive and dynamic Power BI dashboard, enabling clear interpretation of sentiment
+    trends over time.</p>
+<div class="row">
+    <div class="col-6">
+        <img src="/media/login.png" class="mx-2 my-2" width="650px" height="400px">
+        <p class="ms-5">Login page for the stakeholders to login</p>
+    </div>
+    <div class="col-6">
+        <img src="/media/dashboard.png" class="mx-2 my-2" width="650px" height="400px">
+        <p class="ms-5">Dashboard created using Power BI which allows the users for user-immersive analysis</p>
+    </div>
+</div>
+        <a href="https://github.com/ajith-joshy/TweetPulse-A-Power-BI-Driven-Interactive-Sentiment-Analysis-Dashboard-for-Brand-Monitoring.git" class="btn btn-outline-light rounded-pill py-3 px-4 mt-3 mb-3 mx-2 justify-content-center">Github Link<i class="bi bi-github"></i></a>
+</div>
+    </div>
+{% endblock %}

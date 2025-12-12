@@ -1,0 +1,109 @@
+/* Background & shine */
+body {
+    background: #0d0d0d;
+    color: #ffffff;
+    position: relative;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, rgba(0,0,0,0) 60%);
+    animation: shineMove 6s ease-in-out infinite;
+    pointer-events: none;
+}
+@keyframes shineMove {
+    0%, 100% { transform: translate(0, 0); }
+    50%     { transform: translate(20%, 20%); }
+}
+
+/* Page fade-in */
+.page-animate {
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeInUp 0.7s ease-out forwards;
+}
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mild golden cursor glow */
+#cursor-light {
+    position: fixed;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(
+        circle,
+        rgba(255, 215, 0, 0.35) 0%,
+        rgba(255, 215, 0, 0.15) 40%,
+        rgba(255, 215, 0, 0) 75%
+    );
+    box-shadow:
+        0 0 6px rgba(255, 215, 0, 0.35),
+        0 0 12px rgba(255, 215, 0, 0.25);
+    opacity: 0;
+    transition: opacity 0.25s ease-out, transform 0.1s linear;
+}
+#cursor-light.moving {
+    transform: translate(-50%, -50%) scale(1.05);
+}
+
+/* NAVBAR: premium hover (no underline, no color swap) */
+.navbar-nav .nav-link {
+    position: relative;
+    padding: 8px 14px;
+    transition: transform 0.25s ease, text-shadow 0.25s ease, opacity 0.25s ease;
+    opacity: 0.85;
+}
+
+.navbar-nav .nav-link:hover {
+    transform: translateY(-2px);
+    text-shadow: 0 0 6px rgba(255,255,255,0.45);
+    opacity: 1;
+}
+
+.btn-custom {
+    background: transparent;
+    border: 2px solid rgba(255,255,255,0.25);
+    color: rgba(255,255,255,0.85);
+    padding: 10px 24px;
+    border-radius: 8px;
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        color 0.25s ease,
+        box-shadow 0.25s ease;
+    backdrop-filter: blur(3px);
+}
+
+/* HOVER: PREMIUM EFFECT */
+.btn-custom:hover {
+    transform: translateY(-4px);  /* lift */
+    border-color: rgba(255,255,255,0.55);
+    color: #ffffff;
+    box-shadow:
+        0 4px 12px rgba(255,255,255,0.10),  /* soft bottom shadow */
+        0 0 18px rgba(255,255,255,0.15);    /* very soft glow */
+}
+
+/* CLICK EFFECT → subtle press */
+.btn-custom:active {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 6px rgba(255,255,255,0.10);
+}
