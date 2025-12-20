@@ -1,6 +1,3 @@
-import os
-
-from django.conf import settings
 from django.http import FileResponse, Http404
 from django.shortcuts import render
 from django.views import View
@@ -30,16 +27,16 @@ class Internships(View):
     def get(self,request):
         return render(request,'internships.html')
 
-
+from django.contrib.staticfiles import finders
 class DownloadCV(View):
     def get(self, request):
-        cv_path = getattr(
-            settings,
-            "CV_FILE_PATH",
-            os.path.join(settings.MEDIA_ROOT, "cv.pdf"),
-        )
-        if not os.path.exists(cv_path):
+        cv_path = finders.find("files/cv.pdf")
+
+        if not cv_path:
             raise Http404("CV not found.")
 
-        filename = os.path.basename(cv_path)
-        return FileResponse(open(cv_path, "rb"), as_attachment=True, filename=filename)
+        return FileResponse(
+            open(cv_path, "rb"),
+            as_attachment=True,
+            filename="Ajith_M_Joshy_CV.pdf"
+        )
