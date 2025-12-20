@@ -1,9 +1,10 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block content %}
 <div class="container-fluid">
     <div class="row">
         <div class="col-6">
-            <img src="/media/pp.jpg" class="img-fluid rounded-circle d-block my-3" height="400px" width="400px" alt="My Photo">
+            <img src="{% static 'media/pp.jpg' %}" class="img-fluid rounded-circle d-block my-3" height="400px" width="400px" alt="My Photo">
         </div>
         <div class="col-6 justify-content-center align-items-center">
             <h1 class="me-5 my-3 mt-5 display-2">Ajith M Joshy</h1>

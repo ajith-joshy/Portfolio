@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block content %}
 <div class="container-fluid justify-content-center">
     <div class="container-fluid">
@@ -18,11 +19,11 @@
     trends over time.</p>
 <div class="row">
     <div class="col-6">
-        <img src="/media/login.png" class="mx-2 my-2" width="650px" height="400px">
+        <img src="{% static 'media/login.png' %}" class="mx-2 my-2" width="650px" height="400px">
         <p class="ms-5">Login page for the stakeholders to login</p>
     </div>
     <div class="col-6">
-        <img src="/media/dashboard.png" class="mx-2 my-2" width="650px" height="400px">
+        <img src="{% static 'media/dashboard.png' %}" class="mx-2 my-2" width="650px" height="400px">
         <p class="ms-5">Dashboard created using Power BI which allows the users for user-immersive analysis</p>
     </div>
 </div>

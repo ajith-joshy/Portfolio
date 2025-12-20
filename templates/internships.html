@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block content %}
 <div class="container-fluid">
 <h4 class="mt-3"><i class="bi bi-person-workspace"></i>Digital Skills Internship(2022)</h4>
@@ -6,7 +7,7 @@
     <h6><i class="fa-solid fa-location-dot"></i> Conducted by ICT Academy of Kerala</h6>
     <h6><i class="bi bi-chevron-right"></i>Provided comprehensive training on essential digital skills, equipping participants with practical knowledge and hands-on
 experience in modern technologies and digital tools.</h6>
-    <img src="/media/ICT.png" class="mx-2 my-2" width="650px" height="400px">
+    <img src="{% static 'media/ICT.png' %}" class="mx-2 my-2" width="650px" height="400px">
     </div>
 
 <h4 class="mt-5"><i class="bi bi-person-workspace"></i>Full Stack Python Web Development with Django framework(July,2025-current)</h4>
